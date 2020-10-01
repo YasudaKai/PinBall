@@ -16,13 +16,13 @@ public class BallController : MonoBehaviour
     {
         this.gameoverText = GameObject.Find("GameOverText");
         this.scoreText = GameObject.Find("ScoreText");
-        
+        this.scoreText.GetComponent<Text>().text = "Score" + this.score;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        
         if (this.transform.position.z < this.visiblePosZ)
         {
             this.gameoverText.GetComponent<Text>().text = "Game Over";
@@ -53,7 +53,7 @@ public class BallController : MonoBehaviour
             this.score += 10;
         }
 
-
+        this.scoreText.GetComponent<Text>().text = "Score" + this.score;
 
 
     }
